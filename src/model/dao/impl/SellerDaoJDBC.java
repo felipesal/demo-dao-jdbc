@@ -49,7 +49,7 @@ public class SellerDaoJDBC implements SellerDao{
 					int id= rs.getInt(1);
 					obj.setId(id);
 				}
-				DB.closeResultSet(rs);;
+				DB.closeResultSet(rs);
 			}
 			else {
 				throw new DbException("Unexpected error: No arrows affected");
@@ -66,7 +66,7 @@ public class SellerDaoJDBC implements SellerDao{
 
 	@Override
 	public void update(Seller obj) {
-PreparedStatement st = null;
+		PreparedStatement st = null;
 		
 		try {
 			st = conn.prepareStatement(
